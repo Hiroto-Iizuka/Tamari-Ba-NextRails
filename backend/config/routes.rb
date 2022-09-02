@@ -1,13 +1,23 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {
-    :registrations => 'users/registrations',
-    :sessions => 'users/sessions'   
-  } 
-  
+  devise_for :users, controllers: { 
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
   devise_scope :user do
-    get "user/:id", :to => "users/registrations#detail"
-    get "signup", :to => "users/registrations#new"
-    get "login", :to => "users/sessions#new"
-    get "logout", :to => "users/sessions#destroy"
+    post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
   end
+  resources :users, only: [:index, :show]
+
+  get '/', to: 'home#index'
+  get '/roads', to: 'roads#index'
+
+  get '/users', to: 'users#index'
+
+  resources :roads, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+    resources :comments, only: [:create]
+    resource :likes, only: [:create, :destroy]
+  end
+    namespace :admin do
+      resources :roads, only: [:index, :new, :create, :show, :edit, :destroy]
+    end
 end
