@@ -69,7 +69,7 @@
 *.tsbuildinfo
 /frontend/app/next-env.d.ts
 
-/frontend/.env
+/frontend/.env.local
 
 # COMMON
 
