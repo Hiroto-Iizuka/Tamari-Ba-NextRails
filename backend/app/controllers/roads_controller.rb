@@ -63,8 +63,8 @@ class RoadsController < ApplicationController
 
     def correct_user
       @road = Road.find(params[:id])
-        unless @road.user.id == current_user.id
-          redirect_to roads_path
-        end
+      unless @road.user.id == current_user.id
+        redirect_to roads_path
+      end
     end
 end
