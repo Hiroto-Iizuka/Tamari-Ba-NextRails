@@ -53,7 +53,7 @@ export const Home = (props) => {
               <p class="card-content">{road.description}</p>
             </div>
             <div class="d-flex justify-content-between mx-3">
-              <p class="user-name">by {road.user.name}</p>
+              <p class="user-name">by {road.user_id}</p>
             </div>
           </div>
           )}
