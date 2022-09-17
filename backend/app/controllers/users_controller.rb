@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @users = User.page(params[:page]).per(PER_PAGE).order(id: :asc)
     @prefectures = Prefecture.all
-    render json: { "user": @users, "prefecture": @prefectures }
+    render json: @users
   end
   
   def show
