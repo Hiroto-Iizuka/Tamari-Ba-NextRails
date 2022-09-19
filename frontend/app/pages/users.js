@@ -4,18 +4,18 @@ export const Users = (props) => {
   return (
     <>
       <h1>ユーザー一覧</h1>
-      {props.users.map((user) => 
-        <div class="user-card-wrapper">
-          <div class="card user-card">
-            <div class="user-card-image"></div>
-            <div class="user-card-body">
-              <div class="user-card-title">
-                <p>{user.name}</p>
-              </div>
-            </div>
-          </div>     
-        </div>
-      )}
+        {/* <div className="user-card-wrapper"> */}
+        {props.users.map((user) => 
+          // <div id={user.id} className="card user-card">
+          //   <div className="user-card-image"></div>
+          //   <div className="user-card-body">
+          //     <div className="user-card-title">
+                <p id={user.id}>{user.name}</p>
+          //     </div>
+          //   </div>
+          // </div> 
+          )}   
+        {/* </div> */}
     </>
   )
 }

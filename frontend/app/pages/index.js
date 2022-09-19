@@ -5,13 +5,13 @@ export const Home = (props) => {
   return (
     <>
       {/* Masthead */}
-      <div class="flame">
-        <div class="main-container overlay">
-          <div class="container px-4 px-lg-5 h-100">
-            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-              <div class="col-lg-8 align-self-end">
-                  <h1 class="title-text">Tamari-Ba</h1>
-                  <hr class="divider" />
+      <div className="flame">
+        <div className="main-container overlay">
+          <div className="container px-4 px-lg-5 h-100">
+            <div className="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+              <div className="col-lg-8 align-self-end">
+                  <h1 className="title-text">Tamari-Ba</h1>
+                  <hr className="divider" />
               </div>
               {/* <div class="col-lg-8 align-self-baseline">
                 <p class="sub-text">『Tamari-Ba』は全国のバイク乗りのおすすめスポットを投稿するWEBアプリ。<br>バイク乗りのTamari-Baで自分の好きな峠、シーサイド、道の駅などについて語ろう。</p>
@@ -32,28 +32,28 @@ export const Home = (props) => {
       </div>
 
       {/* About */}
-      <section class="page-section content-list" id="about">
-        <div class="container px-4 px-lg-5">
-          <div class="row gx-4 gx-lg-5 justify-content-center">
-              <div class="col text-center">
-                  <h2 class="title-text mt-0 pt-5">What is Tamari-Ba?</h2>
+      <section className="page-section content-list" id="about">
+        <div className="container px-4 px-lg-5">
+          <div className="row gx-4 gx-lg-5 justify-content-center">
+              <div className="col text-center">
+                  <h2 className="title-text mt-0 pt-5">What is Tamari-Ba?</h2>
               </div>
           </div>
         </div>
 
-        <div class="text-center">
-          <h2 class="title-text py-5">最新の投稿</h2>
+        <div className="text-center">
+          <h2 className="title-text py-5">最新の投稿</h2>
         </div>
         
-        <div class="card-wrapper">
+        <div className="card-wrapper">
           {props.roads.map((road) =>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">{road.title}</h5>
-              <p class="card-content">{road.description}</p>
+          <div className="card" id={road.user_id}>
+            <div className="card-body">
+              <h5 className="card-title">{road.title}</h5>
+              <p className="card-content">{road.description}</p>
             </div>
-            <div class="d-flex justify-content-between mx-3">
-              <p class="user-name">by {road.user_id}</p>
+            <div className="d-flex justify-content-between mx-3">
+              <p className="user-name">by {road.user_id}</p>
             </div>
           </div>
           )}
@@ -80,8 +80,8 @@ export const Home = (props) => {
           <% end %>
         </div> */}
 
-        <div class="text-center">
-          <h2 class="title-text py-5">機能紹介</h2>
+        <div className="text-center">
+          <h2 className="title-text py-5">機能紹介</h2>
         </div>
 
         {/* <section id="feat">
@@ -143,8 +143,8 @@ export const Home = (props) => {
       </section>
 
       {/* Footer */}
-      <footer class="bg-light py-5">
-          <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2021 - Hiroto Iizuka</div></div>
+      <footer className="bg-light py-5">
+          <div clasNames="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2021 - Hiroto Iizuka</div></div>
       </footer>
     </>
   )
